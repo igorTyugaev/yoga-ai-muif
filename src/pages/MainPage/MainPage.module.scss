@@ -1,0 +1,50 @@
+@use '../../UIKit/scss/global/index' as *;
+
+.Container {
+  width: 100vw;
+  height: calc(100vh - 64px);
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 2.1fr 3fr;
+  gap: 24px;
+  overflow: hidden;
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.Banner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.Content {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: minmax(100px, 20%) minmax(120px, 20%) 1fr;
+  overflow: hidden;
+  gap: 24px;
+}
+
+.Stat {
+  width: 100%;
+  height: 100%;
+}
+
+.Action {
+  width: 100%;
+  height: 100%;
+}
+
+.Programs {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
