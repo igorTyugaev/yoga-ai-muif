@@ -1,14 +1,16 @@
 import {createTheme} from "@mui/material/styles";
+import colors from '../UIKit/scss/global/_palette.scss';
 
 export const defaultTheme = createTheme({
     palette: {
         type: 'light',
         primary: {
-            main: '#7068d4',
-            light: '#e0dfff',
+            main: '#ff6e40',
+            light: '#fbe9e7',
         },
         secondary: {
-            main: '#ff4438',
+            main: '#7c4dff',
+            light: '#d1c4e9',
         },
         error: {
             main: '#d8385e',
@@ -21,6 +23,10 @@ export const defaultTheme = createTheme({
         },
         info: {
             main: '#ffb0a7',
+        },
+
+        dark: {
+            main: '#616161',
         },
     },
 });

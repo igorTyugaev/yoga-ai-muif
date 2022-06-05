@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {Link as RouterLink, useHistory} from "react-router-dom";
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 import {
     AppBar,
@@ -17,7 +18,7 @@ import {
 
 import UserAvatar from "../UserAvatar";
 import {useAppContext} from "../../AppContext";
-import Logo from "../../legacy/Assets/logo_text.svg";
+import Logo from "../../Assets/logo_text.svg";
 
 const LogoImg = styled('img')(({theme}) => ({
     objectFit: 'contain',
@@ -73,8 +74,10 @@ const Bar = () => {
         },
     ];
 
+    //sx={{backgroundColor: 'rgb(112, 104, 212, 0.36)', boxShadow: 'none'}}
     return (
-        <AppBar sx={{backgroundColor: 'rgb(112, 104, 212, 0.36)', boxShadow: 'none'}} color="primary" position="static">
+        <AppBar color="transparent" position="static"
+                sx={{borderBottom: '1px solid rgb(238, 238, 238)', boxShadow: 'none'}}>
             <Toolbar>
                 <Box display="flex" flexGrow={1}>
                     <Link
@@ -85,6 +88,14 @@ const Bar = () => {
                     >
                         <LogoImg src={Logo} alt="YogaAI"/>
                     </Link>
+                </Box>
+
+                <Box display="flex" flexGrow={0} sx={{marginLeft: '12px'}}>
+                    <a href="https://github.com/igorTyugaev/yoga-ai" target="_blank">
+                        <IconButton>
+                            <GitHubIcon color="primary"/>
+                        </IconButton>
+                    </a>
                 </Box>
 
                 {user && (

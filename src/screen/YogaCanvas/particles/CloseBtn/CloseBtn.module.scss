@@ -1,0 +1,40 @@
+.CloseBtn {
+  width: 4em;
+  height: 4em;
+  border-radius: 4em;
+  border: 3px solid rgba(76, 78, 80, 0.6);
+  color: transparent;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.CloseBtn:before, .CloseBtn:after {
+  position: absolute;
+  width: 2em;
+  height: 2px;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: -1em;
+  content: '';
+  background: white;
+  transition: all ease 1s;
+}
+
+.CloseBtn:before {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.CloseBtn:after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.CloseBtn:hover, .CloseBtn:focus {
+  transform: rotate(180deg);
+  border-color: #f26a3d;
+}
+
+.CloseBtn:hover:before, .CloseBtn:hover:after, .CloseBtn:focus:before, .CloseBtn:focus:after {
+  background: red;
+}

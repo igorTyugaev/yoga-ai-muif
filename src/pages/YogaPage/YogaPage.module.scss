@@ -1,0 +1,103 @@
+@use '../../UIKit/scss/global/index' as *;
+
+.Inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  overflow: hidden;
+
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #F2F2F2;
+    opacity: .7;
+  }
+}
+
+.Canvas {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+
+  margin: auto;
+  //border-radius: 15px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.Intro {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.IntroImg {
+  display: inline-block;
+  object-fit: contain;
+  width: 75%;
+}
+
+.IntroList {
+  padding: 24px;
+  align-self: stretch;
+  text-align: center;
+  z-index: 1;
+}
+
+.IntroListItem {
+  font-family: $fontMain;
+  font-size: 16px;
+  line-height: 120%;
+
+  & + & {
+    margin-top: 12px;
+  }
+}
+
+.IntroBtn {
+  height: 62px;
+  background-color: #080808;
+  border-radius: 35px;
+  overflow: hidden;
+  color: white;
+  font-family: $fontMain;
+  font-weight: bold;
+  padding: 0 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  border: 2px solid #080808;
+
+  transition: .3s background-color, .3s color;
+
+  &:hover {
+    background-color: transparent;
+    color: #080808;
+  }
+}
+
+.Timer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}

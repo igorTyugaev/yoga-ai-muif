@@ -51,13 +51,13 @@ function EmptyState(props) {
 
                 {props.title && (
                     <Box mb={!props.description && props.button ? 2 : 0.5}>
-                        <Typography variant={variant}>{props.title}</Typography>
+                        <Typography variant="h4">{props.title}</Typography>
                     </Box>
                 )}
 
                 {props.description && (
                     <Box mb={props.button && 3}>
-                        <Typography variant="body1">{props.description}</Typography>
+                        <Typography variant="h5">{props.description}</Typography>
                     </Box>
                 )}
 

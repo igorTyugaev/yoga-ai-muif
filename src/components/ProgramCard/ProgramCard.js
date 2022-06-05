@@ -1,28 +1,44 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import {CardActionArea} from '@mui/material';
+import React from 'react';
+import {Badge, Chip, styled} from '@mui/material';
 
-export default function ProgramCard({img, desc, title}) {
+const Wrapper = styled('div')(({theme}) => ({
+    borderRadius: '15px',
+    overflow: 'hidden',
+    // width: 'calc(38% - 18px)',
+    height: '100%',
+    border: '1px solid #e0e0e0',
+    flex: '0 0 auto',
+    cursor: 'pointer',
+    position: 'relative',
+    transition: '.5s borderColor',
+    '& + &': {
+        marginLeft: '18px'
+    },
+    '&:hover': {
+        borderColor: '#d84315',
+    }
+}));
+
+const ContentImg = styled('img')(({theme}) => ({
+    objectFit: 'contain',
+    objectPosition: 'center',
+    width: '100%',
+    height: '100%'
+}));
+
+const Label = styled(Chip)(({theme}) => ({
+    position: 'absolute',
+    top: '16px',
+    right: '16px',
+}));
+
+export default function ProgramCard({img, onClick, isNew = false, ...props}) {
     return (
-        <Card sx={{marginBottom: '24px', overflow: 'visible'}}>
-            <CardActionArea>
-                <CardMedia sx={{objectPosition: 'top center', objectFit: "cover"}}
-                           component="img"
-                           image={img}
-                           alt="green iguana"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h6" component="h3">
-                        {title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        {desc}
-                    </Typography>
-                </CardContent>
-            </CardActionArea>
-        </Card>
+        <Wrapper onClick={onClick} {...props}>
+            <ContentImg
+                src={img}
+                alt=""/>
+            {isNew && <Label label="новинка" color="secondary" variant="outlined" size="small"/>}
+        </Wrapper>
     );
 }
