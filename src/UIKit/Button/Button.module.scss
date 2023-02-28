@@ -1,0 +1,32 @@
+@use 'src/UIKit/scss/global' as *;
+
+.Button {
+  font-family: $fontMain;
+  height: 62px;
+  background-color: #080808;
+  border-radius: 35px;
+  overflow: hidden;
+  color: white;
+
+  font-weight: bold;
+  padding: 0 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid #080808;
+
+  transition: .3s background-color, .3s color;
+
+  &:hover {
+    background-color: transparent;
+    color: #080808;
+  }
+
+  &_color {
+    &_uplift {
+      background-color: $uplift;
+      border-color: $uplift;
+    }
+  }
+}

@@ -1,0 +1,233 @@
+@use '../../UIKit/scss/global/index' as *;
+
+.Inner {
+  position: relative;
+  z-index: 2;
+  background-color: #f3f3f3;
+}
+
+.Canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Count {
+  position: fixed;
+  z-index: 22;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Selector {
+  position: absolute;
+  top: 24px;
+  left: 8%;
+  min-width: 196px;
+
+  border: 3px solid rgba(76, 78, 80, 0.6);
+  color: white;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  background-color: rgba(0, 0, 0, .3);
+  font-weight: bold;
+}
+
+.Timer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 24px;
+  margin-right: 24px;
+
+  width: 240px;
+  height: 240px;
+
+  display: inline-flex;
+  justify-content: center;
+  //background-color: rgba(242, 242, 242, .6);
+  background-color: rgba(76, 78, 80, 0.6);
+  border-radius: 50%;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.PoseImg {
+  object-fit: contain;
+
+  border-radius: 15px;
+  overflow: hidden;
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  opacity: .72;
+  width: 64%;
+  max-height: 80%;
+  padding-bottom: 24px;
+}
+
+.CloseBtn {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.Confetti {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(242, 242, 242, .8);
+  border-radius: 15px;
+  overflow: hidden;
+  height: 75%;
+  width: 50%;
+  padding: 48px 24px;
+}
+
+.ModalInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ModalTitle {
+  font-family: $fontMain;
+  font-weight: bold;
+  font-size: 42px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.ModalMessage {
+  font-family: $fontMain;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ModalActions {
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.ModalAction {
+  width: calc(50% - 24px);
+}
+
+.Loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+
+/*------- Checkmark ---------*/
+
+.SvgBox {
+  display: inline-block;
+  position: relative;
+  width: 25%;
+}
+
+.GreenStroke {
+  stroke: #7CB342;
+}
+
+.CircularPath {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  opacity: 0.4;
+  animation: 0.7s DrawCircle ease-out;
+}
+
+.Checkmark {
+  stroke-width: 6.25;
+  stroke-linecap: round;
+  position: absolute;
+  top: 56px;
+  left: 49px;
+  width: 52px;
+  height: 140px;
+}
+
+.CheckmarkCheck {
+  animation: 1s DrawCheck ease-out;
+}
+
+@keyframes DrawCircle {
+  0% {
+    stroke-dasharray: 0, 400;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  80% {
+    stroke-dasharray: 400, 400;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes DrawCheck {
+  0% {
+    stroke-dasharray: 49, 80;
+    stroke-dashoffset: 48;
+    opacity: 0;
+  }
+
+  50% {
+    stroke-dasharray: 49, 80;
+    stroke-dashoffset: 48;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dasharray: 130, 80;
+    stroke-dashoffset: 48;
+  }
+}
+
+/*---------- Cross ----------*/

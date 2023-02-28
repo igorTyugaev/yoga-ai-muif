@@ -1,0 +1,58 @@
+@use '../../UIKit/scss/global/index' as *;
+
+h1 {
+  font-family: $fontMain;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 3em;
+  line-height: 108px;
+  //color: #080808;
+  color: $clear;
+}
+
+.TimerWrapper {
+  display: inline-flex;
+  justify-content: center;
+  width: auto;
+  //background-color: rgba(242, 242, 242, .6);
+  background-color: rgba(76, 78, 80, 0.6);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.TimerSVG {
+  display: inline-block;
+  position: absolute;
+}
+
+.TimeWrapper {
+  position: relative;
+  width: 80px;
+  height: 60px;
+  font-size: 48px;
+
+  .time {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.2s;
+  }
+
+  .time.up {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  .time.down {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
